@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/game-logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>React Tic-Tac-Toe</title>
+</head>
+
+<body>
+  <!--         
+    In React.js, usually first index.html file will be loaded, if visitor loads the web page, so, contents in index.html will be loaded along index.jsx file loaded from script tag.
+
+    Usually our react components and logic will be present in index.jsx, that content will be rendered in root element by React as mentioned in  ReactDOM.createRoot(document.getElementById('root')).render(<App />); in index.jsx , 
+    But we can write html static content here in index.html file if needed, so here we are crearing some header tag contains image tag and heading tag.
+  -->
+  <header>
+    <!-- Here, we are specifying the src attribute of the image as image name , not a file path of image with image name because contents present in public folder can be directly referenced in react project. -->
+    <img src="game-logo.png" alt="Tic-Tac-Toe-Gaming-Board">
+    <h1>Tic-Tac-Toe</h1>
+  </header>
+
+  <div id="root"></div>
+
+  <!-- As Already Know, react injects script tags automatically in to index.html during production, here we are explicitly adding importing index.jsx file(here all our react component code logics present)
+  
+  here we are specifying type="module" in <script> </script> tag make sure that javascript file is treated as Javscript module, so this unlocks new syntax import , we can import and export scripts from all files we are loading here ,for e.g we can import scripts from A to B or export scripts from A to B, etc.. 
+  -->
+  <script type="module" src="/src/index.jsx"></script>
+</body>
+
+</html>
